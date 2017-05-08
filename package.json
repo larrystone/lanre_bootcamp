@@ -27,5 +27,6 @@
   "dependencies": {
     "chai": "^3.5.0",
     "jasmine": "^2.6.0"
-  }
+  },
+  "devDependencies": {}
 }
