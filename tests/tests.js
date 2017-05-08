@@ -13,6 +13,10 @@ describe("Get Prime Numbers", function() {
   it("should return [2,3,5] for getPrimes(6)", function() {
     assert.equal(myApp.getPrimes(6).toString(), [2,3, 5].toString());
   })
+
+  it("should return [2] for getPrimes(2)", function() {
+    assert.equal(myApp.getPrimes(2).toString(), [2].toString());
+  })
 })
 
 describe("Get Prime Numbers for edge cases", function() {
