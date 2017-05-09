@@ -1,7 +1,7 @@
 {
-  "name": "getprime",
+  "name": "Data Type",
   "version": "1.0.0",
-  "description": "A program to fetch prime numbers ",
+  "description": "A program to perfrom action based on data type ",
   "main": "main.js",
   "directories": {
     "test": "tests"
@@ -28,5 +28,4 @@
     "chai": "^3.5.0",
     "jasmine": "^2.6.0"
   },
-  "devDependencies": {}
 }

@@ -2,24 +2,41 @@
 
 module.exports = {
 
- /* list prime numbers from 0 to n */
- getPrimes: (n) => {
-   let primes = [];
+ /* Perform action based on data type */
+ dataTypes: (data) => {
 
-   if (n == NaN || n < 2)
-      return primes;
-
-  iteration: for (let k = 2; k <= n; k++) {
-   let half = Math.floor(Math.sqrt(k));
-
-   for (let i = 2; i <= half; i++) {
-      if (k % i == 0) {
-         continue iteration;
-      }
+  //edge cases
+   if (data === null || data === undefined || data === NaN) {
+    return 'no value';
    }
-   primes.push(k);
-  }
-   
-   return primes;
- },
+
+   //for strings
+   if (typeof data === 'string') {
+    return data.length;
+   }
+
+   //for boolean
+   if (typeof data === 'boolean') {
+    return data;
+   }
+
+   //for numbers
+   if (typeof data === 'number') {
+    if (data < 100)
+      return 'less than 100'
+    else if (data > 100)
+      return 'more than 100'
+    else
+      return 'equal to 100'
+   }
+
+   //for array
+   if (typeof data === 'object') {
+    return data[3]
+   }
+
+   if (typeof data === 'function') {
+    return data(true)
+   }   
+  },
 }
