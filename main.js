@@ -23,20 +23,20 @@ module.exports = {
    //for numbers
    if (typeof data === 'number') {
     if (data < 100)
-      return 'less than 100'
+      return 'less than 100';
     else if (data > 100)
-      return 'more than 100'
+      return 'more than 100';
     else
-      return 'equal to 100'
+      return 'equal to 100';
    }
 
    //for array
    if (typeof data === 'object') {
-    return data[3]
+    return data[3];
    }
 
    if (typeof data === 'function') {
-    return data(true)
+    return data(true);
    }   
   },
 }
