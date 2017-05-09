@@ -3,40 +3,34 @@
 module.exports = {
 
  /* Perform action based on data type */
- dataTypes: (data) => {
+ findMinMax: (numbers) => {
 
   //edge cases
-   if (data === null || data === undefined || data === NaN) {
-    return 'no value';
+   if (numbers === null || numbers === undefined || numbers === NaN) {
+    return 'invalid value';
    }
 
-   //for strings
-   if (typeof data === 'string') {
-    return data.length;
-   }
+   //splitSearch runs concurrent search and return array [large, small]
+  function splitSearch(i) {
+    return numbers[i] > numbers[numbers.length - (i+1)] ? [ numbers[i], numbers[numbers.length - (i+1)] ] : [ numbers[numbers.length - (i+1)], numbers[i] ];
+  }
 
-   //for boolean
-   if (typeof data === 'boolean') {
-    return data;
-   }
+  let largest = numbers[0];
+  let smallest = numbers[0];
 
-   //for numbers
-   if (typeof data === 'number') {
-    if (data < 100)
-      return 'less than 100';
-    else if (data > 100)
-      return 'more than 100';
-    else
-      return 'equal to 100';
-   }
-
-   //for array
-   if (typeof data === 'object') {
-    return data[3];
-   }
-
-   if (typeof data === 'function') {
-    return data(true);
-   }   
+  for (let i = 0; i < numbers.length/2; i++) {
+    let largerSmaller = splitSearch(i);
+    
+    if (largest < largerSmaller[0])
+      largest = largerSmaller[0];
+    
+    if (smallest > largerSmaller[1])
+      smallest = largerSmaller[1];
+  }
+  
+  if (smallest == largest)
+    return [smallest];
+    
+  return [smallest,largest];
   },
 }

@@ -1,7 +1,7 @@
 {
-  "name": "Data Type",
+  "name": "Find Minimum & Maximum",
   "version": "1.0.0",
-  "description": "A program to perfrom action based on data type ",
+  "description": "A program to find the minimum and maximum values in an array ",
   "main": "main.js",
   "directories": {
     "test": "tests"
